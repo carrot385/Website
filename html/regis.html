@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo"></div>
+        <nav>
+            <a href="../html/index.html">Главная</a>
+            <a href="../html/about.html">О нас</a>
+            <a href="../html/regis.html"class="active">Зарегестрироваться</a>
+        </nav>
+    </header>
+    <div class="content">
+        <div class="registration">
+            <div class="clip_video">
+                <video src="../resources/Clip.mp4" autoplay muted loop></video>
+            </div>
+            <div class="form">
+                <h2>Оставьте свои данные для звонка:</h2>
+                <form name="iform" onsubmit="return regist()">
+                    <label>ФИО<span>*</span></label>
+                    <input class="field" type="text" name="fio" id="fio" pattern="^[А-Яа-яЁё\s]+$" required>
+                    <label>Телефон<span>*</span></label>
+                    <input class="field" type="tel" name="phone" id="phone" required>
+                    <label>Почта</label>
+                    <input class="field" type="email" name="email" id="email" required>
+                    <label>Возраст ученика<span>*</span></label>
+                    <input class="field" type="number" name="num" id="num" required>
+                    <label>Имя ученика<span>*</span></label>
+                    <input class="field" type="text" name="stud" id="stud" pattern="^[А-Яа-яЁё\s]+$" required>
+                    <label>Пол ученика<span>*</span></label>
+                    <div class="gender">
+                        <input type="radio" name="gender" checked value="Мужской"> Мужской
+                        <input type="radio" name="gender" value="Женский"> Женский
+                        <input type="radio" name="gender" value="Оно"> Оно
+                    </div>
+                    <label>Откуда узнали о нас:</label>
+                    <select name="from" id="from" class="field">
+                        <option value="Из группы ВК">Из группы ВК</option>
+                        <option value="Рассказали знакомые">Рассказали знакомые</option>
+                        <option value="Нашли в интернете" selected>Нашли в интернете</option>
+                        <option value="Реклама">Реклама</option>
+                    </select>
+                    <input type="submit" value="Зарегестрироваться">
+                </form>
+            </div>
+        </div>
+        <div class="table">
+            <h2>Все зарегестрированные дети</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <td>Имя ученика</td>
+                        <td>Возраст ученика</td>
+                        <td>Пол ученика</td>
+                        <td>Откуда о нас узнали</td>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+
+                </tbody>
+            </table>
+            <button onclick="deleteDate(db)">Удалить данные</button>
+        </div>
+    </div>
+    <footer>
+        <nav>
+            <a href="../html/index.html">Главная</a>
+            <a href="../html/about.html">О нас</a>
+            <a href="../html/regis.html">Зарегестрироваться</a>
+        </nav>
+    </footer>
+    <script src="../js/script.js" type="text/javascript"></script>
+</body>
+</html>
